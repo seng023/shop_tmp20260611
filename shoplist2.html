@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 56%;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid rgba(241, 4, 99, 0.94);
+            border-collapse: separate;
+            text-align: center;
+        }
+
+        img {
+             height:120px;
+             width:200x;
+            
+           
+        }
+      
+
+    </style>
+
+</head>
+
+<body bgcolor="#fff5f5">
+    <div class="container">
+         <div  style="text-align: left; color: #0000FF;">
+  <h2>
+    <img style="border-radius: 0.9em;" src="./ges.jpg" alt="" width="8%" height="2%" >
+    六號圓小舖購買單
+  </h2>
+         </div>
+         <!-- <center><h2><font color="#0000FF"> <img  style="border-radius: 0.9em;" src="./ges.jpg" alt=""  >六號圓圓園小舖購買單</font></h2></center>   -->
+       <table bgcolor="black" cellpadding="5" border="0">
+         <table>
+            <tr>
+                <td width="5%" bgcolor="yellow" >編號</td>
+                <td width="5%"  bgcolor="yellow"  >名稱</td>
+                <td width="15%" bgcolor="yellow"  >外觀</td>
+                <td width="5%"  bgcolor="yellow"  >定價</td>
+                <td width="20%" bgcolor="yellow"   >數量</td>
+                <td  bgcolor="red" >Total總計(未稅)</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>桌上型電腦</td>
+                <td>
+                    <img src="./dpc.jpg" alt="">
+                </td>
+                <td>
+                    <span>
+                        23000
+                    </span>
+                </td>
+                <td>
+                    <input class="counts" data-price="20000" type="number" name="" id="" value="1" min="0" >
+                </td>
+                <td>
+                    <span class="totals">
+                        50000
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>筆記型電腦</td>
+                <td>
+                    <img src="./npc.jpg" alt="">
+                </td>
+                <td>
+                    <span>
+                        35000
+                    </span>
+                </td>
+                <td>
+                    <input class="counts" data-price="30000" id="myCount" type="number" name="" id="" value="1" min="0" >
+                </td>
+                <td>
+                    <span id="myTotal" class="totals">
+                        30000
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>平版型電腦</td>
+                <td>
+                    <img src="./ppc.jpg" alt="">
+                </td>
+                <td>
+                    <span>
+                        12150
+                    </span>
+                </td>
+                <td>
+                    <input class="counts" data-price="10500" type="number" name="" id="" value="1" min="0" >
+                </td>
+                <td>
+                    <span class="totals">
+                        10500
+                    </span>
+                </td>
+            </tr>
+
+        <tr>
+                <td>4</td>
+                <td>mini平版型電腦</td>
+                <td>
+                    <img src="./pppc.jpg" alt="">
+                </td>
+                <td>
+                    <span>
+                        8150
+                    </span>
+                </td>
+                <td>
+                    <input class="counts" data-price="7500" type="number" name="" id="" value="1" min="0" >
+                </td>
+                <td>
+                    <span class="totals">
+                    7500
+                    </span>
+                </td>
+            </tr>
+
+        <tr>
+                <td>5</td>
+                <td>特調經濟型電腦</td>
+                <td>
+                    <img src="./ppppc.jpg" alt="">
+                </td>
+                <td>
+                    <span>
+                       5150
+                    </span>
+                </td>
+                <td>
+                    <input class="counts" data-price="5000" type="number" name="" id="" value="1" min="0" >
+                </td>
+                <td>
+                    <span class="totals">
+                    5000
+                    </span>
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="6">
+                   <h3><font color="#0000FF">總計金額(未稅)-新台幣(元)</font></h3> <br> <span id="originPrice"><font color="#11d0ed"><h3>5000</h3></font></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                   <h3><font color="#0ccbe8">滿額五萬以上折扣九折</font></span>
+                </td>
+            </tr>
+             <tr>
+                <td colspan="6">
+                   <h3><font color="#0000FF">折扣後總計金額(未稅)-新台幣(元)</font></h3> <br> <span id="originPrice1"><font color="#11d0ed"><h3>5000</h3></font></span>
+                </td>
+            </tr>
+            
+        </table>
+    </table>
+    </div>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        const myCountJs = document.getElementById('myCount');
+        const myTotalJs = document.getElementById('myTotal');
+
+
+        $(document).ready(function () {
+
+
+            const counts = $('.counts');
+            const totals = $('.totals');
+            const myCount = $('#myCount');
+            const myTotal = $('#myTotal');
+            const originPrice = $('#originPrice');
+            const originPrice1 = $('#originPrice1');
+           
+            counts.change(function () {
+                console.log('myCount ok');
+                let tmpCount = Number($(this).val());
+                let tmpPrice = Number($(this).attr('data-price'));
+                console.log('tmpCount', tmpCount);
+                console.log('tmpPrice', tmpPrice);
+
+                let result = tmpCount * tmpPrice;
+                console.log('result', result);
+               
+                let tmpTr = $(this).parent().parent();
+                let tmpTotal = tmpTr.find('.totals');
+                console.log('tmpTr', tmpTr);
+                console.log('tmpTotal', tmpTotal);
+                tmpTotal.text(result);
+
+              
+                console.log(tmpTotal.text());
+
+             
+                let tmpTotals = $('.totals');
+                console.log('tmpTotals', tmpTotals);
+                console.log('counts', counts);
+
+
+                let sum = 0;
+                $.each(tmpTotals, function (key, value) {
+                    console.log('key', key);
+                    console.log('value', value);
+                    let tmpValue = Number($(value).text());
+                    console.log('tmpValue', tmpValue);
+                    console.log('tmpValue typeof', typeof (tmpValue));
+                    sum += tmpValue;
+                  
+                });
+
+                console.log('sum', sum);
+               
+                originPrice.text(sum);
+                
+                if (sum > 50000) {
+                sum = sum * 0.9;  
+                }
+                originPrice1.text(sum);
+
+
+
+
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>
